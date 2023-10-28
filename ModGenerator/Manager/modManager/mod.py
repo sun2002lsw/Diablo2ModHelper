@@ -8,4 +8,3 @@ def GenerateMod():
 
     pathGuideScript = GeneratePathGuideScript()
     CreateModFiles(pathGuideScript)
-
