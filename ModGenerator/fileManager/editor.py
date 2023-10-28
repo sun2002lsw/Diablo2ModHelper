@@ -1,7 +1,14 @@
 import os
+import shutil
+
+from .path import *
 
 
-TEMPLATE_DIR = "ModGenerator/template/"
+# 이미 생성된 스크립트가 있다면 깔끔하게 다 지우기
+def CleanResults():
+    absPath = os.path.join(os.getcwd(), RESULT_DIR)
+    if os.path.exists(absPath):
+        shutil.rmtree(absPath)
 
 
 # 특정 엔티티 내용을 전부 읽고 한줄로 반환
@@ -18,7 +25,7 @@ def ReadEntityTemplate(entityName):
 # 목표가 되는 템플릿 파일 각각에 대해 스크립트를 삽입해서 새로운 폴더에 생성
 def CreateModFiles(scriptStr):
     baseAbsPath = os.path.join(os.getcwd(), TEMPLATE_DIR + "targets/")
-    resultAbsPath = os.path.join(os.getcwd(), "results/")
+    resultAbsPath = os.path.join(os.getcwd(), RESULT_DIR)
 
     createAllModFile(baseAbsPath, "", scriptStr, resultAbsPath)
 

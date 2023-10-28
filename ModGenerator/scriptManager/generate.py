@@ -1,6 +1,6 @@
 import math
 
-from .file import ReadEntityTemplate
+from ..fileManager import ReadEntityTemplate
 
 
 # 뭔가 엄청난 방법으로 길찾기 가이드를 그려줌
