@@ -1,0 +1,22 @@
+,
+	{
+      "type": "Entity",
+      "name": "drop_light",
+      "id": 9999996974,
+      "components": [
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "component_transform1",
+          "position": { "x": xPos, "y": yPos, "z": zPos },
+          "orientation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+          "scale": { "x": 1, "y": 1, "z": 1 },
+          "inheritOnlyPosition": false
+        },
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "entity_vfx_gousemyideaandshareyourfilthymods",
+          "filename": "data/hd/vfx/particles/overlays/object/horadric_light/fx_horadric_light.particles",
+          "hardKillOnDestroy": false
+        }
+      ]
+    }
