@@ -6,5 +6,4 @@
 diabloPath="디아경로. ex) C:\Program Files (x86)\Battle.net\Diablo2"
 modName="모드이름. ex) sw"
 ```
-3. `generate mod.bat` 파일을 실행하면 스킨이 즉시 적용됨
-`generate mod.bat`에서 업데이트도 같이 진행해서 원클릭 개꿀
+3. `generate mod.bat` 파일을 실행하면 스킨이 즉시 적용됨 (`generate mod.bat`에서 업데이트도 같이 진행해서 원클릭 개꿀)
