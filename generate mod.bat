@@ -8,12 +8,10 @@ IF NOT EXIST config.ini (
 	exit
 )
 
-:: 변경 사항 다 버리고 master 최신화
+:: master 최신화
 git checkout master
 echo.
 git pull
-echo.
-git reset --hard origin/master
 echo.
 
 :: 스크립트 생성
@@ -26,4 +24,9 @@ for /f "tokens=1,2 delims==" %%a in (config.ini) do (
 )
 
 :: 생성된 스크립트 이동
+echo %diabloPath%/mods/%modName%/%modName%.mpq/data 폴더에 모드 설치
 move .\data %diabloPath%/mods/%modName%/%modName%.mpq/
+
+:: 뭐라고 하는지 봐야지
+echo.
+pause
