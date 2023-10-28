@@ -29,7 +29,9 @@ def GetResultsCnt():
 
 def CheckResultJson():
     absPath = os.path.join(os.getcwd(), RESULT_DIR)
-    checkJsonValidation(absPath)
+    valid, filePath = checkJsonValidation(absPath)
+
+    return valid, filePath
 
 
 def checkJsonValidation(absPath):
@@ -47,9 +49,10 @@ def checkJsonValidation(absPath):
         if extension != ".json":
             continue
 
-        try:
-            json.loads(elementAbsPath)
-        except ValueError:
-            return False, elementAbsPath
+        with open(elementAbsPath, 'r') as file:
+            try:
+                json.loads(file.read())
+            except ValueError:
+                return False, element
 
-        return True, ""
+    return True, ""
