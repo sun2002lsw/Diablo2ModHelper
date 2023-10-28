@@ -1,14 +1,14 @@
 @echo off
 cd %~dp0
 
-IF EXIST config.ini (
-) ELSE (
-	echo "config.ini" íŒŒì¼ì´ ìˆì–´ì•¼ í•¨ (README.md ì°¸ê³ )
+:: ¼³Á¤ ÆÄÀÏÀÌ ¾øÀ¸¸é ¾ÖÃÊ¿¡ ½ÃÀÛÀ» ¾È ÇÔ
+IF NOT EXIST config.ini (
+	echo "config.ini" ÆÄÀÏÀÌ ÀÖ¾î¾ß ÇÔ [README.md Âü°í]
 	pause
-	exist
+	exit
 )
 
-# ë³€ê²½ ì‚¬í•­ ë‹¤ ë²„ë¦¬ê³  master ìµœì‹ í™”
+:: º¯°æ »çÇ× ´Ù ¹ö¸®°í master ÃÖ½ÅÈ­
 git checkout master
 echo.
 git pull
@@ -16,14 +16,14 @@ echo.
 git reset --hard origin/master
 echo.
 
-# ìŠ¤í¬ë¦½íŠ¸ ìƒì„±
+:: ½ºÅ©¸³Æ® »ı¼º
 python .\ModGenerator\main.py
 
-# ì„¤ì • íŒŒì¼ ì½ê¸°
+:: ¼³Á¤ ÆÄÀÏ ÀĞ±â
 for /f "tokens=1,2 delims==" %%a in (config.ini) do (
     if %%a==diabloPath set %%a=%%b
     if %%a==modName set %%a=%%b
 )
 
-# ìƒì„±ëœ ìŠ¤í¬ë¦½íŠ¸ ì´ë™
+:: »ı¼ºµÈ ½ºÅ©¸³Æ® ÀÌµ¿
 move .\data %diabloPath%/mods/%modName%/%modName%.mpq/
