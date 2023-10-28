@@ -1,6 +1,6 @@
 import pytest
 
-from .main import *
+from .mod import *
 
 
 # 딱히 테스트 없이 일단 똑같이 실행
