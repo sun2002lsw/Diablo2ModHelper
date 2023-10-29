@@ -1,7 +1,7 @@
 # 디아2 스킨 쉽게 적용하기
 
 1. `generate mod.bat` 파일 옆에 `config.json` 파일을 만든다
-2. config 파일에 이런식으로 "디아블로 폴더 경로"와 "모드 이름"을 써준다
+2. config 파일에 이런식으로 "디아블로 폴더 경로"와 "모드 이름"을 써준다 (경로에 \\ 써야 함)
 ```
 {
 	"diabloPath" : "D:\\Games\\Diablo II",
